@@ -1,0 +1,98 @@
+package Client;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+
+import helpers.*;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+@SuppressWarnings("serial")
+public class ClientInformation extends JPanel {
+
+	JLabel lblDirections;
+	JTextField txtDirections;
+	JLabel lblName;
+	JTextField txtName;
+	JLabel lblID;
+	JTextField txtID;
+	JLabel lblStart;
+	JTextField txtStart;
+	JLabel lblClose;
+	JTextField txtClose;
+	JButton btnSave;
+	JButton btnClear;
+	
+	
+	
+	public ClientInformation()
+	{
+		super();
+		createPanel();
+	}
+	
+	
+	public void clear()
+	{
+		txtDirections.setText("");
+		txtName.setText("");
+		txtID.setText("");
+		txtStart.setText("");
+		txtClose.setText("");
+	}
+	
+	private void createPanel() 
+	{
+		super.setLayout(new GridBagLayout());
+		GridBagConstraints bag = new GridBagConstraints();
+		
+		bag.fill = GridBagConstraints.BOTH;
+		bag.anchor =GridBagConstraints.FIRST_LINE_START;
+		bag.insets = new Insets(5, 5, 5, 5);
+		
+		//layout the panel on rows and columns
+		//Column 0,  Row 0
+		bag.gridx = 0;
+		bag.gridy = 0;
+		lblDirections = new JLabel();
+		lblDirections = setText("File Name");
+		super.add(lblDirections, bag);
+		
+		//column 1, row 0
+		bag.gridx =0;
+		bag.gridy = 1;
+		txtDirections = new JTextField(5);
+		super.add(txtDirections, bag);
+		
+		//column 0, row 1
+		bag.gridx = 0;
+		bag.gridy = 1;
+		lblName = new JLabel();
+		lblName = setText("Client Name");
+		super.add(lblName, bag);
+		
+		//column 1, row 1
+		bag.gridx = 1;
+		bag.gridy = 1;
+		txtName = new JTextField(25);
+		super.add(txtName, bag);
+		
+		
+		
+		
+	}
+
+
+	private JLabel setText(String string) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+	
+}
